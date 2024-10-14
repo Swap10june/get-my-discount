@@ -64,7 +64,9 @@
 				const decodedDiscount = atob(encodedDiscount);
 				const decodedEmail = atob(encodedEmail);
 				const decodedShopName = atob(encodedShopName);
-
+				alert(decodedDiscount);
+				alert(decodedEmail);
+				alert(decodedShopName);
 				// Update the text with the decoded discount and email
 				document.getElementById("discount-text").innerText = decodedDiscount + "% OFF";
 				document.getElementById("customer-id").innerText = decodedEmail;
