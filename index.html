@@ -60,7 +60,7 @@
 			const encodedEmail = urlParams.get('email');
 			const encodedShopName = urlParams.get('shopName');
 			alert('2');
-			if (encodedDiscount && encodedEmail && shopName) {
+			if (encodedDiscount && encodedEmail && encodedShopName ) {
 				// Decode the Base64 values
 				const decodedDiscount = atob(encodedDiscount);
 				const decodedEmail = atob(encodedEmail);
