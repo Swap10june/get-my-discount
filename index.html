@@ -41,8 +41,8 @@
 </head>
 
 <body>
-	<h1 id="dynamic-header">🎉 🎉</h1>
-	<h2>Congratulations!</h2>
+	<h1>🎉 Welcome 🎉</h1>
+	<h2>Congratulations.......!</h2>
 	<p>Dear valued customer,<br /><span class="discount"><strong id="customer-id"></strong></span></p>
 	<p>You’ve unlocked an <strong>exclusive discount</strong> just for you!<br />
 		<span class="discount"><strong id="discount-text"></strong></span> on your next purchase.
@@ -68,7 +68,6 @@
 				// Update the text with the decoded discount and email
 				document.getElementById("discount-text").innerText = decodedDiscount + "% OFF";
 				document.getElementById("customer-id").innerText = decodedEmail;
-				document.getElementById("dynamic-header").innerText = "🎉" + decodedShopName + "🎉";
 				document.getElementById("dynamic-header-2").innerText = decodedShopName;
 
 			} else {
