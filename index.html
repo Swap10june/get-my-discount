@@ -59,14 +59,9 @@
 			const encodedEmail = urlParams.get('email');
 			const encodedShopName = urlParams.get('shop');
 			if (encodedDiscount && encodedEmail && encodedShopName ) {
-				// Decode the Base64 values
 				const decodedDiscount = atob(encodedDiscount);
 				const decodedEmail = atob(encodedEmail);
 				const decodedShopName = atob(encodedShopName);
-				alert(decodedDiscount);
-				alert(decodedEmail);
-				alert(decodedShopName);
-				// Update the text with the decoded discount and email
 				document.getElementById("discount-text").innerText = decodedDiscount + "% OFF";
 				document.getElementById("customer-id").innerText = decodedEmail;
 				document.getElementById("dynamic-header-2").innerText = decodedShopName;
