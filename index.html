@@ -54,12 +54,10 @@
 
 	<script>
 		window.onload = function () {
-			alert('1');
 			const urlParams = new URLSearchParams(window.location.search);
 			const encodedDiscount = urlParams.get('discount');
 			const encodedEmail = urlParams.get('email');
-			const encodedShopName = urlParams.get('shopName');
-			alert('2');
+			const encodedShopName = urlParams.get('shop');
 			if (encodedDiscount && encodedEmail && encodedShopName ) {
 				// Decode the Base64 values
 				const decodedDiscount = atob(encodedDiscount);
