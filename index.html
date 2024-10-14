@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Your Discount</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			padding: 20px;
+			background-color: #f9f9f9;
+		}
+
+		h1 {
+			color: #28a745;
+		}
+
+		h2 {
+			color: #007bff;
+		}
+
+		p {
+			font-size: 18px;
+		}
+
+		.discount {
+			font-size: 24px;
+			color: #e83e8c;
+		}
+
+		a {
+			color: white;
+			background-color: #007bff;
+			padding: 10px 20px;
+			text-decoration: none;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 id="dynamic-header">🎉 🎉</h1>
+	<h2>Congratulations!</h2>
+	<p>Dear valued customer,<br /><span class="discount"><strong id="customer-id"></strong></span></p>
+	<p>You’ve unlocked an <strong>exclusive discount</strong> just for you!<br />
+		<span class="discount"><strong id="discount-text"></strong></span> on your next purchase.
+	</p>
+	<p>All you need to do is show this email and scan your barcode at checkout to enjoy the savings.</p>
+	<p><a href="https://swap10june.github.io/GK-Brand-House/index.html">Visit Our Shop Now</a></p>
+	<p style="margin-top: 20px;">Thank you for shopping with us!<br />Best regards,<br /><strong>GK Brand House
+			Team</strong></p>
+
+	<script>
+		window.onload = function () {
+			const urlParams = new URLSearchParams(window.location.search);
+			const encodedDiscount = urlParams.get('discount');
+			const encodedEmail = urlParams.get('email');
+			const encodedShopName = urlParams.get('shopName');
+
+			if (encodedDiscount && encodedEmail && shopName) {
+				// Decode the Base64 values
+				const decodedDiscount = atob(encodedDiscount);
+				const decodedEmail = atob(encodedEmail);
+				const decodedShopName = atob(encodedShopName);
+
+				// Update the text with the decoded discount and email
+				document.getElementById("discount-text").innerText = decodedDiscount + "% OFF";
+				document.getElementById("customer-id").innerText = decodedEmail;
+				document.getElementById("dynamic-header").innerText = "🎉"+ decodedShopName+"🎉";
+
+			} else {
+				alert("No discount or email found.");
+			}
+		};
+	</script>
+
+</body>
+
+</html>
