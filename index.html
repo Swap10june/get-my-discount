@@ -41,16 +41,17 @@
 </head>
 
 <body>
-	<h1 id="dynamic-header">🎉 🎉</h1>
+	<h1>🎉<span id="dynamic-header"></span>🎉</h1>
 	<h2>Congratulations!</h2>
 	<p>Dear valued customer,<br /><span class="discount"><strong id="customer-id"></strong></span></p>
 	<p>You’ve unlocked an <strong>exclusive discount</strong> just for you!<br />
 		<span class="discount"><strong id="discount-text"></strong></span> on your next purchase.
 	</p>
 	<p>All you need to do is show this email and scan your barcode at checkout to enjoy the savings.</p>
-	<p><a href="https://swap10june.github.io/GK-Brand-House/index.html">Visit Our Shop Now</a></p>
-	<p style="margin-top: 20px;">Thank you for shopping with us!<br />Best regards,<br /><strong>GK Brand House
-			Team</strong></p>
+	<p><a href="#">Visit Our Shop Now</a></p>
+	<p style="margin-top: 20px;">Thank you for shopping with us!<br />Best regards,<br /><strong><span
+				id="dynamic-header-2"></span></strong>
+	</p>
 
 	<script>
 		window.onload = function () {
@@ -68,7 +69,8 @@
 				// Update the text with the decoded discount and email
 				document.getElementById("discount-text").innerText = decodedDiscount + "% OFF";
 				document.getElementById("customer-id").innerText = decodedEmail;
-				document.getElementById("dynamic-header").innerText = "🎉"+ decodedShopName+"🎉";
+				document.getElementById("dynamic-header").innerText = "🎉" + decodedShopName + "🎉";
+				document.getElementById("dynamic-header-2").innerText = decodedShopName;
 
 			} else {
 				alert("No discount or email found.");
